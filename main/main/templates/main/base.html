@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}Home{% endblock title %}</title>
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" value="en-US" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0. shrink-to-fit=no" />
+    <link href="{% static 'vendor/bootstrap/4.4.1/css/bootstrap.min.css' %}" rel="stylesheet" media="screen" />
+    <link href="{% static 'app/css/app.css' %}" rel="stylesheet" media="screen" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Poll-App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active"><a class="nav-link" href="/app_base">App<span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/app_crud">App:CRUD</a></li>
+                <li class="nav-item"><a class="nav-link" href="/app_view">App:VIEW</a></li>
+                <li class="nav-item"><a class="nav-link" href="/app_test">App:TEST</a></li>
+                <li class="nav-item"><a class="nav-link" href="/app_base">App:BASE</a></li>
+                <!--
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                    -->
+                <!--
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    -->
+            </ul>
+            &nbsp;
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/polls/help">Help</a>
+                </li>
+            </ul>
+
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <a class="nav-link" href="/admin">Admin</a>
+            </button>
+        </div>
+    </nav>
+
+    <main role="main">
+        <div id="site-wrapper">
+            {% block content %}MISSING CONTENT{% endblock content %}
+        </div>
+    </main>
+
+    <footer class="container fixed-bottom bg-dark text-white">
+        <p>&copy; Django-App</p>
+    </footer>
+</body>
+
+<script src="{% static 'vendor/popper/1.14.3/popper.min.js' %}"></script>
+<script src="{% static 'vendor/jquery/3.4.1/js/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/jquery/3.4.1/js/jquery.slim.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/4.4.1/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'app/js/app.js' %}"></script>
+
+</html>

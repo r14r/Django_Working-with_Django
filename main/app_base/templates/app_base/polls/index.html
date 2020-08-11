@@ -1,0 +1,23 @@
+{% extends 'app_test/base.html' %}
+
+{% block title %}Detail{% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
+
+{% block content %}
+
+<div class="container">
+    <h1>APP_BASE - Home</h1>
+
+    <h2>Questions</h2>
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'app_base:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
+</div>
+{% endblock content %}
